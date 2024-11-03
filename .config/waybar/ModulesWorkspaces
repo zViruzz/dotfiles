@@ -7,10 +7,10 @@
 {
 // CIRCLES Style
 "hyprland/workspaces": {
-	"active-only": false,
-	"all-outputs": true,
+	"active-only": true,
+	"all-outputs": false,
 	"format": "{icon}",
-	"show-special": false,
+	"show-special": true,
 	"on-click": "activate",
 	"on-scroll-up": "hyprctl dispatch workspace e+1",
 	"on-scroll-down": "hyprctl dispatch workspace e-1",

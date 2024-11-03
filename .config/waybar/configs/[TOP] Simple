@@ -8,34 +8,48 @@
   "$HOME/.config/waybar/ModulesCustom",
   "$HOME/.config/waybar/ModulesGroups",
   ],
-"layer": "top", 
-"position": "top", 
+"layer": "top",
+"position": "top",
 //"mode": "dock",
 "exclusive": true,
 "passthrough": false,
 "gtk-layer-shell": true,
-"margin-left": 6,
+"margin-left": 16,
 "margin-right": 6,
-"margin-top": 2,
+"margin-top": 5,
+"margin-bottom": -10,
 
-"modules-left": [	
-	"idle_inhibitor", 
+
+/* ----  "modules-left": [
+	"idle_inhibitor",
 	"group/mobo_drawer",
 	"hyprland/workspaces#rw",
 	"tray",
-	"mpris", 
+	"mpris",
 	],
-    
+
+ ---- */
+
+
+"modules-left": [
+	"custom/menu",
+	"group/mobo_drawer",
+	"hyprland/workspaces",
+	"custom/separator#blank_2"
+],
+
 "modules-center": [
 	"clock#2",
+    "custom/separator#blank",
 	"custom/swaync",
 	],
-    
+
 "modules-right": [
-	"hyprland/window",  
-	"battery",
- 	"group/audio", 
-	"custom/power",
+	"hyprland/window",
+	"custom/separator#blank",
+	"custom/separator#blank",
+	"pulseaudio",
+	"custom/separator#blank",
+	"custom/power",					1
 	],
 }
-

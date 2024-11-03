@@ -5,14 +5,14 @@
     b-color: #000000FF;
     fg-color: #FFFFFFFF;
     fgp-color: #888888FF;
-    b-radius: 8px;
-    g-padding: 8px;
-    hl-color: #FFFFFFFF;
+    b-radius: 12px;
+    g-padding: 12px;
+    hl-color: #FFFFFFC4;
     hlt-color: #000000FF;
-    alt-color: #111111FF;
-    wbg-color: #000000CC;
-    w-border: 0px solid;
-    w-border-color: #FFFFFFFF;
+    alt-color: #1113148E;
+    wbg-color: #111314D4;
+    w-border: 1px solid;
+    w-border-color: #ffffff;
     w-padding: 12px;
 }
 

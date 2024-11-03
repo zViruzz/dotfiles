@@ -138,7 +138,8 @@
     //"format": " {:%I:%M %p}", // AM PM format
     "format": "  {:%H:%M}", // 24H
     "format-alt": "{:%A  |  %H:%M  |  %e %B}",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+		"timezone": "America/Argentina/Buenos_Aires"
 },
 "clock#3": {
     //"format": "{:%I:%M %p - %d/%b}", //for AM/PM

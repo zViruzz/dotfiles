@@ -51,7 +51,7 @@ window {
 
     // Style Values
     width:                      50%;
-    background-color:           @background;
+    background-color:           rgb(17,19,20,0.8);
 }
 
 /* ----- Main Box ----- */
@@ -81,12 +81,12 @@ entry {
     enabled:                     true;
     expand:                      false;
     width:                       20%;
-    padding:                     10px;
+    padding:                     10px 15px;
     border-radius:               12px;
     background-color:            @selected;
     text-color:                  @text-selected;
     cursor:                      text;
-    placeholder:                 "🖥️ Search "; // << Search symbol
+    placeholder:                 "Search "; // << Search symbol
     placeholder-color:           inherit;
 }
 
@@ -177,10 +177,8 @@ element normal.active {
 
 element selected.normal {
 /* ----   border:                      1px 6px 1px 6px;---- */
-    border:                      5px;
     border-radius:               16px;
-    border-color:                @selected;
-    background-color:            transparent;
+    background-color:            rgb(32, 35, 37, 0.65);
     text-color:                  @selected;
 }
 
@@ -238,3 +236,4 @@ error-message {
     background-color:            @background-alt;
     text-color:                  @background;
 }
+

@@ -34,7 +34,7 @@ listview {
 /* ---- Element ---- */
 element {
   orientation: vertical;
-  padding: 0px 0px 20px 0px;
+  padding: 0 0 23px 0;
   spacing: 0px;
   border-radius: 15px;
 }
