@@ -9,6 +9,25 @@ on   = "T"
 run  = "plugin --sync max-preview"
 desc = "Maximize or restore preview"
 
+[[manager.prepend_keymap]]
+on   = "H"
+run  = "plugin --sync hide-preview"
+desc = "Hide or show preview"
+
+[[manager.prepend_keymap]]
+on   = "F"
+run  = "plugin smart-filter"
+desc = "Smart filter"
+
+[[manager.prepend_keymap]]
+on   = "<c-o>"
+run  = "plugin open-with-cmd --args=block"
+desc = "Open with command in the terminal"
+
+[[manager.prepend_keymap]]
+on   = "<c-i>"
+run  = "plugin open-with-cmd"
+desc = "Open with command"
 
 keymap = [
 	{ on = [ "<Esc>" ], run = "escape",             desc = "Exit visual mode, clear selected, or cancel search" },
