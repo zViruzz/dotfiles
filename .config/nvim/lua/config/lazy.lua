@@ -24,7 +24,8 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.coding.mini-surround" },
     { import = "lazyvim.plugins.extras.util.mini-hipatterns" },
     { import = "lazyvim.plugins.extras.dap.core" },
-    { "tribela/vim-transparent" },
+    { import = "lazyvim.plugins.extras.lang.tailwind" },
+    -- { "tribela/vim-transparent" },
     -- import/override with your plugins
     { import = "plugins" },
   },

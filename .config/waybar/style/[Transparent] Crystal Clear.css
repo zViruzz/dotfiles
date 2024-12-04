@@ -6,7 +6,7 @@
 	font-family: "JetBrains Mono Nerd Font";
 	font-weight: bold;
 	min-height: 0;	
-	text-shadow: 3px 3px 3px rgba(0,0,0,0.90);
+	text-shadow: 2px 2px 2px rgba(0,0,0,0.60);
 	/* set font-size to 100% if font scaling is set to 1.00 using nwg-look */
 	font-size: 100%;
 	font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';

@@ -84,7 +84,7 @@
  method = pulse
  source = auto
 
- method = pipewire
+ # method = pipewire
  source = auto
 
 ; method = alsa
@@ -243,14 +243,14 @@
 # for wallust
 gradient = 1
 gradient_count = 8
-gradient_color_1 = '#3F3F3F'
-gradient_color_2 = '#525252'
-gradient_color_3 = '#575656'
-gradient_color_4 = '#808080'
-gradient_color_5 = '#CFCECE'
-gradient_color_6 = '#A6A5A5'
-gradient_color_7 = '#ABAAAA'
-gradient_color_8 = '#CFCECE'
+gradient_color_1 = '#474749'
+gradient_color_2 = '#696978'
+gradient_color_3 = '#8A999D'
+gradient_color_4 = '#A39496'
+gradient_color_5 = '#E6DADA'
+gradient_color_6 = '#93D4DD'
+gradient_color_7 = '#D9C6C7'
+gradient_color_8 = '#E6DADA'
 
 
 [smoothing]

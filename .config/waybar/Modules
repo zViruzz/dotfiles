@@ -191,7 +191,7 @@
 },
 "hyprland/window": {
 	"format": "{}",
-	"max-length": 20,
+	"max-length": 35,
 	"separate-outputs": true,
 	"offscreen-css": true,
 	"offscreen-css-text": "(inactive)",
@@ -200,6 +200,7 @@
 		"(.*) - fish": "> [$1]",
 		"(.*) - zsh": "> [$1]",
 		"(.*) - $term": "> [$1]",
+		"(.*) - Visual Studio Code": "󰨞 - $1",
 	},
 },
 "idle_inhibitor": {

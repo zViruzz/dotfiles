@@ -22,6 +22,8 @@ import {
     ExecuteCommandButton,
     SearchButton,
     SearchButtonAI,
+    TranslateBoxEN,
+    TranslateBoxES,
 } from "./searchbuttons.js";
 
 // Add math funcs
@@ -117,6 +119,7 @@ export const SearchAndWindows = () => {
             const text = self.text;
             if (text.length == 0) return;
             const isAction = text.startsWith(">");
+            const isActionAI = entry.text[0] == "p" && entry.text[1] == " ";
             const isDir = ["/", "~"].includes(entry.text[0]);
 
             if (couldBeMath(text)) {
@@ -136,6 +139,16 @@ export const SearchAndWindows = () => {
                 execAsync(["bash", "-c", `xdg-open "${expandTilde(text)}"`, `&`]).catch(
                     print,
                 );
+                return;
+            }
+            if (isActionAI) {
+                App.closeWindow("overview");
+                const newText = text.slice(2);
+                execAsync([
+                    "bash",
+                    "-c",
+                    `xdg-open '${userOptions.searchAI.engineBaseUrl}${newText} ${["", ...userOptions.search.excludedSites].join(" -site:")}' &`,
+                ]).catch(print);
                 return;
             }
             if (_appSearchResults.length > 0) {
@@ -167,6 +180,8 @@ export const SearchAndWindows = () => {
         onChange: (entry) => {
             // this is when you type
             const isAction = entry.text[0] == ">";
+            const isActionAI = entry.text[0] == "p" && entry.text[1] == " ";
+            const isActionTranslate = entry.text[0] == "t" && entry.text[1] == " ";
             const isDir = ["/", "~"].includes(entry.text[0]);
             resultsBox.get_children().forEach((ch) => ch.destroy());
 
@@ -210,6 +225,18 @@ export const SearchAndWindows = () => {
                 // Eval on typing is dangerous, this is a workaround.
                 resultsBox.add(CustomCommandButton({ text: entry.text }));
             }
+
+            if (isActionAI) {
+                // Eval on typing is dangerous, this is a workaround.
+                const newText = text.slice(2);
+                resultsBox.add(SearchButtonAI({ text: newText }));
+            }
+            if (isActionTranslate) {
+                // Eval on typing is dangerous, this is a workaround.
+                const newText = text.slice(2);
+                resultsBox.add(TranslateBoxES({ text: newText }));
+                resultsBox.add(TranslateBoxEN({ text: newText }));
+            }
             // Add application entries
             let appsToAdd = MAX_RESULTS;
             _appSearchResults.forEach((app) => {
@@ -235,7 +262,7 @@ export const SearchAndWindows = () => {
 
             // Add fallback: search
             resultsBox.add(SearchButton({ text: entry.text }));
-            resultsBox.add(SearchButtonAI({ text: entry.text }));
+            // resultsBox.add(SearchButtonAI({ text: entry.text }));
             resultsBox.show_all();
         },
     });

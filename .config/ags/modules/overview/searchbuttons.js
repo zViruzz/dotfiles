@@ -171,4 +171,24 @@ export const SearchButtonAI = ({ text = '' }) => searchItem({
         App.closeWindow('overview');
         execAsync(['bash', '-c', `xdg-open '${userOptions.searchAI.engineBaseUrl}${text} ${['', ...userOptions.search.excludedSites].join(' -site:')}' &`]).catch(print);
     },
+})
+export const TranslateBoxES = ({ text = '' }) => searchItem({
+    materialIconName: ' ',
+    name: 'Translate ES',
+    actionName: 'Go',
+    content: `${text}`,
+    onActivate: () => {
+        App.closeWindow('overview');
+        execAsync(['bash', '-c', `xdg-open '${userOptions.translateES.engineBaseUrl}${text} ${['', ...userOptions.search.excludedSites].join(' -site:')}' &`]).catch(print);
+    },
+});
+export const TranslateBoxEN = ({ text = '' }) => searchItem({
+    materialIconName: ' ',
+    name: 'Translate EN',
+    actionName: 'Go',
+    content: `${text}`,
+    onActivate: () => {
+        App.closeWindow('overview');
+        execAsync(['bash', '-c', `xdg-open '${userOptions.translateEN.engineBaseUrl}${text} ${['', ...userOptions.search.excludedSites].join(' -site:')}' &`]).catch(print);
+    },
 });

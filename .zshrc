@@ -5,19 +5,18 @@ export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="headline"
 
-
 plugins=(
+  z
   git
   dnf
   zsh-autosuggestions
   zsh-syntax-highlighting
   fast-syntax-highlighting
   zsh-autocomplete
-  web-search
+  # web-search
 )
 
 source $ZSH/oh-my-zsh.sh
-
 
 # check the dnf plugins commands here
 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/dnf
@@ -57,7 +56,9 @@ alias yz="yazi"
 alias nv="nvim"
 alias rconf="cd ~/.config/"
 
-alias xampp='sudo /opt/lampp/lampp'
+alias m-psql='sudo -u postgres psql'
+alias cz='czg emoji'
+# alias xampp='sudo /opt/lampp/lampp'
 # Set-up icons for files/folders in terminal using eza
 # alias ls='eza -a --icons'
 # alias ll='eza -al --icons'
@@ -68,13 +69,12 @@ alias laa="lsd -lSa"
 alias ll="lsd -aS"
 alias nff="neofetch"
 
-
 PATH=~/.console-ninja/.bin:$PATH
 
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# nvm
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # pnpm
 export PNPM_HOME="/home/zviruz/.local/share/pnpm"
@@ -84,4 +84,11 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-if [ -e /home/zviruz/.nix-profile/etc/profile.d/nix.sh ]; then . /home/zviruz/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+# fnm
+FNM_PATH="/home/zviruz/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/home/zviruz/.local/share/fnm:$PATH"
+  eval "`fnm env`"
+fi
+
+eval "$(fnm env --use-on-cd --shell zsh)"

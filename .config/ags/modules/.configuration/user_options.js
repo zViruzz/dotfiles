@@ -52,6 +52,14 @@ const configOptions = {
         engineBaseUrl: "https://www.perplexity.ai/search?q=",
         excludedSites: [], //add site to exclude from result. eg: "quora.com"
     },
+    translateES: {
+        engineBaseUrl: "https://www.deepl.com/es/translator#es/en/",
+        excludedSites: [], //add site to exclude from result. eg: "quora.com"
+    },
+    translateEN: {
+        engineBaseUrl: "https://www.deepl.com/es/translator#en/es/",
+        excludedSites: [], //add site to exclude from result. eg: "quora.com"
+    },
     time: {
         // See https://docs.gtk.org/glib/method.DateTime.format.html
         // Here's the 12h format: "%I:%M%P"

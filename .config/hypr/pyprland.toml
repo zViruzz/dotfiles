@@ -10,3 +10,11 @@ animation = "fromTop"
 command = "kitty --class kitty-dropterm"
 class = "kitty-dropterm"
 size = "75% 60%"
+
+# [scratchpads.perplexity]
+# animation = "fromRight"
+# command = "/usr/bin/microsoft-edge-stable %U"
+# class = "org.pulseaudio.pavucontrol"
+# size = "40% 90%"
+# unfocus = "hide"
+# lazy = true
