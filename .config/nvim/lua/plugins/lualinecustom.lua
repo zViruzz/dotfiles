@@ -2,38 +2,6 @@ return {
   {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
-    -- dependencies = { "nvim-tree/nvim-web-devicons" },
-    -- config = function()
-    --   require("lualine").setup({
-    -- options = {
-    -- component_separators = "",
-    -- section_separators = { left = "", right = "" },
-    -- },
-    -- sections = {
-    --   lualine_a = { { "mode", separator = { left = "" }, right_padding = 2 } },
-    --   lualine_b = { "filename", "branch" },
-    --   lualine_c = {
-    --     "%=", --[[ add your center compoentnts here in place of this comment ]]
-    --   },
-    --   lualine_x = {},
-    --   lualine_y = { "filetype", "progress" },
-    --   lualine_z = {
-    --     { "location", separator = { right = "" }, left_padding = 2 },
-    --   },
-    -- },
-    -- inactive_sections = {
-    --   lualine_a = { "filename" },
-    --   lualine_b = {},
-    --   lualine_c = {},
-    --   lualine_x = {},
-    --   lualine_y = {},
-    --   lualine_z = { "location" },
-    -- },
-    -- tabline = {},
-    -- extensions = {},
-
-    --   })
-    -- end,
     init = function()
       vim.g.lualine_laststatus = vim.o.laststatus
       if vim.fn.argc(-1) > 0 then
@@ -81,29 +49,30 @@ return {
             { LazyVim.lualine.pretty_path() },
           },
           lualine_x = {
+            Snacks.profiler.status(),
             -- stylua: ignore
             {
               function() return require("noice").api.status.command.get() end,
               cond = function() return package.loaded["noice"] and require("noice").api.status.command.has() end,
-              color = function() return LazyVim.ui.fg("Statement") end,
+              color = function() return { fg = Snacks.util.color("Statement") } end,
             },
             -- stylua: ignore
             {
               function() return require("noice").api.status.mode.get() end,
               cond = function() return package.loaded["noice"] and require("noice").api.status.mode.has() end,
-              color = function() return LazyVim.ui.fg("Constant") end,
+              color = function() return { fg = Snacks.util.color("Constant") } end,
             },
             -- stylua: ignore
             {
               function() return "  " .. require("dap").status() end,
               cond = function() return package.loaded["dap"] and require("dap").status() ~= "" end,
-              color = function() return LazyVim.ui.fg("Debug") end,
+              color = function() return { fg = Snacks.util.color("Debug") } end,
             },
             -- stylua: ignore
             {
               require("lazy.status").updates,
               cond = require("lazy.status").has_updates,
-              color = function() return LazyVim.ui.fg("Special") end,
+              color = function() return { fg = Snacks.util.color("Special") } end,
             },
             {
               "diff",
@@ -139,7 +108,7 @@ return {
             },
           },
         },
-        extensions = { "neo-tree", "lazy" },
+        extensions = { "neo-tree", "lazy", "fzf" },
       }
 
       -- do not add trouble symbols if aerial is enabled

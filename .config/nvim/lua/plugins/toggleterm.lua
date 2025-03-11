@@ -30,8 +30,8 @@ return {
       direction = "float",
       float_opts = {
         border = "curved",
-        -- width = 200,
-        -- height = 300,
+        -- width = 600,
+        -- height = 600,
       },
       -- winbar = {
       --   enabled = true,

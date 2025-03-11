@@ -66,6 +66,7 @@ return {
       },
       window = {
         position = "right",
+        width = 30,
         mappings = {
           ["l"] = "open",
           ["h"] = "close_node",
@@ -108,6 +109,7 @@ return {
       end
 
       local events = require("neo-tree.events")
+      -- opts.popup_border_style = "none"
       opts.event_handlers = opts.event_handlers or {}
       vim.list_extend(opts.event_handlers, {
         { event = events.FILE_MOVED, handler = on_move },

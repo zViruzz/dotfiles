@@ -15,6 +15,7 @@ return {
       nvimtree = true, -- Enable integration with nvim-tree
       treesitter = true, -- Enable integration with treesitter
       notify = false, -- Disable integration with nvim-notify
+      fzf = true,
       mini = {
         enabled = true, -- Enable mini plugin integration
         indentscope_color = "", -- Set indentscope color (empty means default)
