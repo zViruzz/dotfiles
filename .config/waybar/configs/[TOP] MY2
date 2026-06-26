@@ -1,0 +1,58 @@
+
+
+/* ---- 💫 https://github.com/JaKooLit 💫 ---- */
+
+// ### Minimal - Long ### //
+
+{
+"include": [
+  "$HOME/.config/waybar/Modules",
+  "$HOME/.config/waybar/ModulesWorkspaces",
+  "$HOME/.config/waybar/ModulesCustom",
+  "$HOME/.config/waybar/ModulesGroups",
+  "$HOME/.config/waybar/UserModules",
+  ],
+"layer": "top",
+//"mode": "dock",
+"exclusive": true,
+"passthrough": false,
+"position": "top",
+"spacing": 6,
+"fixed-center": true,
+"ipc": true,
+"margin-top": 5,
+"margin-left": 7,
+"margin-right": 7,
+
+"modules-left": [
+	"custom/menu",
+	"custom/separator#blank_2", 
+	"clock#forest",
+	],
+"modules-center": [
+  "custom/swaync",
+	"hyprland/workspaces#kanji",
+	"pulseaudio"
+	],
+"modules-right": [
+	"hyprland/window",
+	"group/mobo_drawer",
+	"memory",
+	"custom/power",
+	],
+
+
+"clock#forest": {
+      "format": "{:%H:%M - %A %d.%m.%Y}",
+      "tooltip-format": "<span color='#D3C6AA' size='larger'>{:%Y %B}</span>\n<tt>{calendar}</tt>",
+      "calendar-weeks-pos": "right",
+  "timezone": "America/Argentina/Buenos_Aires",
+      "today-format": "<span color='#E67E80' weight='ultrabold'>{}</span>",
+      "format-calendar": "<span color='#D3C6AA' weight='normal'>{}</span>",
+      "format-calendar-weeks": "<span color='#7FBBB3'><b>W{:%V}</b></span>",
+      "format-calendar-weekdays": "<span color='#A7C080'><b>{}</b></span>",
+      "on-scroll": {
+                  "calendar": 1
+                   }
+},
+}

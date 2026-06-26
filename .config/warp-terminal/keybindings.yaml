@@ -1,0 +1,8 @@
+---
+"editor_view:select_all": ctrl-shift-A
+"workspace:toggle_ai_assistant": none
+"editor_view:move_to_line_start": ctrl-a
+"terminal:scroll_up_one_line": ctrl-alt-shift-up
+"editor_view:move_to_line_end": ctrl-e
+"terminal:scroll_down_one_line": ctrl-alt-shift-down
+"input:open_completion_suggestions": tab

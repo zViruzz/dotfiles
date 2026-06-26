@@ -1,0 +1,16 @@
+{
+	"Defaul function": {
+		"prefix": "func",
+		"description": "Mi funcion defaul",
+		"body": [
+			"function ${1:name}(${2:params}: ${3:type}): ${4:returnType} {",
+			"  $0",
+			"}"
+		]
+	},
+	"Console log": {
+		"prefix": "clg",
+		"description": "Console log turbo",
+		"body": ["console.log($1)"]
+	}
+}
